@@ -73,16 +73,17 @@ def to_camel_case(underscore_str):
     """
     camelcase_str = underscore_str[:]
     word_list = camelcase_str.split(sep = '_')
- 
-    if len(word_list) == 1:
+    
+    if len(word_list) == 1 :
+        
+        if word_list[0] == '':
+            return word_list[0]
+        
         return camelcase_str[0].lower() + camelcase_str[1:]
 
     camelcase_str = ''
     for word in word_list:
         camelcase_str += word.title()
-    
-    if camelcase_str == '':
-        return camelcase_str
     
     return camelcase_str[0].lower() + camelcase_str[1:]
 
