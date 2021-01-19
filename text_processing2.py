@@ -81,6 +81,9 @@ def to_camel_case(underscore_str):
     for word in word_list:
         camelcase_str += word.title()
     
+    if camelcase_str == '':
+        return camelcase_str
+
     camelcase_str = camelcase_str[0].lower() + camelcase_str[1:]
 
     return camelcase_str
